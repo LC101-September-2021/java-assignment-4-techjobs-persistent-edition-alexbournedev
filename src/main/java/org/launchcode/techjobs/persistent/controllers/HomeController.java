@@ -45,14 +45,11 @@ public class HomeController {
 
     @GetMapping("add")
     public String displayAddJobForm(Model model) {
+
         model.addAttribute("title", "Add Job");
         model.addAttribute(new Job());
-
-        List employers = (List<Employer>) employerRepository.findAll();
-        model.addAttribute("employers", employers);
-
-        List skills = (List<Skill>) skillRepository.findAll();
-        model.addAttribute("skills", skills);
+        model.addAttribute("employers", employerRepository.findAll());
+        model.addAttribute("skills", skillRepository.findAll());
 
         return "add";
     }

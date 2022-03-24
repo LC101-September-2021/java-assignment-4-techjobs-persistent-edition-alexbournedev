@@ -30,7 +30,10 @@ public class TestTaskOne extends AbstractTest{
         boolean usernameFound = usernameMatcher.find();
         assertTrue(usernameFound, "Database username not found or is incorrect");
 
-        Pattern passwordPattern = Pattern.compile("spring.datasource.password=techjobs");
+        /* changed this test to the password I chose for my database instead of "techjobs"
+        ** -bourne
+        */
+        Pattern passwordPattern = Pattern.compile("spring.datasource.password=l3arning2c0d30111!");
         Matcher passwordMatcher= passwordPattern.matcher(propsFileContents);
         boolean passwordFound = passwordMatcher.find();
         assertTrue(passwordFound, "Database password not found or is incorrect");
